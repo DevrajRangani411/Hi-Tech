@@ -80,3 +80,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </body>
 
 </html>
+<?php require_once('php/close_db.php')?>

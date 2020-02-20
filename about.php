@@ -4,9 +4,22 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="breadcrumb_iner">
-                        <h2>Akshar Green</h2>
+                    <?php
+                $qry = "SELECT * FROM appartment where AppartmentId='1' ";
+
+                $result = $con->query($qry);
+                if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+
+            ?>
+                      <div class="breadcrumb_iner">
+
+                        <h2><?php echo $row['Appartment_Name'] ?></h2>
                     </div>
+                    <?php
+                    }
+                }
+                    ?>
                 </div>
             </div>
         </div>

@@ -16,50 +16,37 @@
 <!-- feature part here -->
 <br><br>
 <div class="container">
-    <div class="row">
+      <?php
+                $qry = "SELECT * FROM vehicle  INNER JOIN users  on vehicle.BlockNumber=users.BlockNumber where vehicle.AppartmentId='1'";
 
+                $result = $con->query($qry);
+                if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
 
+            ?>
+       <div class="row">
         <div class="col-sm-3">
             <div class="card card border-secondary">
                 <div class="card-body">
-                    <h5 class="card-title">Flat No - 101</h5>
+                    <h5 class="card-title">Flat No - <?php echo $row['BlockNumber'] ?></h5>
                     <strong>
-                        <p>John Don</p>
+                        <p><?php echo $row['UserName'] ?></p>
                     </strong>
                     <strong>
-                        <p>GJ031234</p>
+                        <p><?php echo $row['VehicleNumber'] ?></p>
                     </strong>
-                    <strong>
-                        <p>GJ032334</p>
-                    </strong>
-                    <b>Contact Detail: 7894561235</b>
+
+                    <b>Contact Detail: <?php echo $row['MobileNumber'] ?></b>
                 </div>
             </div>
         </div>
     </div>
     <br><br>
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="card card border-secondary">
-                <div class="card-body">
-                    <h5 class="card-title">Flat No - 102</h5>
-                    <strong>
-                        <p>Gron Don</p>
-                    </strong>
-                    <strong>
-                        <p>GJ031234</p>
-                    </strong>
-                    <strong>
-                        <p>GJ032334</p>
-                    </strong>
-                    <b>Contact Detail: 7894561235</b>
-                </div>
-            </div>
-        </div>
+    <?php
+                    }
+                }
+    ?>
 
-
-    </div>
-</div><br><br>
 
 <!-- feature part end -->
 
