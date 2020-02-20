@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 
     <!-- breadcrumb part start-->
     <section class="breadcrumb_part">
@@ -22,7 +22,7 @@
                 <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>Please fille the form<br></h3>
-                            <form class="row contact_form" action="about.html" method="post" novalidate="novalidate">
+                            <form class="row contact_form" action="about.php" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="name" name="name" value=""
                                         placeholder="Building Name">
@@ -69,4 +69,4 @@
         </div>
     </section>
     <!--================login_part end =================-->
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>

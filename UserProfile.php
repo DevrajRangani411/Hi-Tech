@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 
 <!-- breadcrumb part start-->
 <section class="breadcrumb_part single_product_breadcrumb">
@@ -81,4 +81,4 @@
 <!-- subscribe part here -->
 
 <!-- subscribe part end -->
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>

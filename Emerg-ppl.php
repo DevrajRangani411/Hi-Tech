@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 
     <!-- breadcrumb part start-->
     <section class="breadcrumb_part">
@@ -58,4 +58,4 @@
 
    </section>
    <!--================Blog Area end =================-->
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>

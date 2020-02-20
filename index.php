@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 <!-- breadcrumb part start-->
 <section class="breadcrumb_part">
     <div class="container">
@@ -22,7 +22,7 @@
                     <div class="login_part_form_iner">
                         <h3>Welcome Back ! <br>
                             Please Sign in now</h3>
-                        <form class="row contact_form" action="Building-join.html" method="post" novalidate="novalidate">
+                        <form class="row contact_form" action="Building-join.php" method="post" novalidate="novalidate">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" id="name" name="name" value="" placeholder="Username">
                             </div>
@@ -47,7 +47,7 @@
             <div class="col-lg-6 col-md-6">
                 <h3>
                     New User ? Sign Up now.</h3>
-                <form action="Registraion.html" method="post" novalidate="novalidate">
+                <form action="Registraion.php" method="post" novalidate="novalidate">
                     <button type="submit" value="submit" class="btn_3">
                         Sign Up </button>
                 </form>
@@ -58,4 +58,4 @@
 <!--================login_part end =================-->
 
 <!--::footer_part start::-->
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>

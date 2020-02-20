@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 
     <section class="breadcrumb_part">
         <div class="container">
@@ -18,7 +18,7 @@
 
             <div class="row justify-content-center">
                  <div class="col-lg-3 col-sm-6">
-                      <a href="Announcement.html">
+                      <a href="Announcement.php">
                     <div class="single_feature_part">
                         <img src="img/icon/megaphone.svg" alt="#">
                         <h4>Annoucement</h4>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                    <a href="Emerg-ppl.html">
+                    <a href="Emerg-ppl.php">
                     <div class="single_feature_part">
                         <img src="img/icon/call.svg" alt="#">
                         <h4>Emergency Directory</h4>
@@ -44,27 +44,27 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                    <a href="members.html"><div class="single_feature_part">
+                    <a href="members.php"><div class="single_feature_part">
                         <img src="img/icon/team-building%20(1).svg" alt="#">
                         <h4>Members</h4><br>
                         </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                    <a href="Gate-Pass.html">
+                    <a href="Gate-Pass.php">
                     <div class="single_feature_part">
                         <img src="img/icon/feature_icon_1.svg" alt="#">
                         <h4>Gate Pass</h4><br>
                         </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                   <a href="parkingreserve.html">
+                   <a href="parkingreserve.php">
                     <div class="single_feature_part">
                         <img src="img/icon/parking.svg" alt="#">
                         <h4>Parking</h4>
                        </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                     <a href="Announcement.html">
+                     <a href="Announcement.php">
                     <div class="single_feature_part">
                         <img src="img/icon/customer.svg" alt="#">
                         <h4>Complains</h4>
@@ -72,7 +72,7 @@
                     </a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                      <a href="UserProfile.html">
+                      <a href="UserProfile.php">
                     <div class="single_feature_part">
                         <img src="img/icon/team-building.svg" alt="#">
                         <h4>Profile</h4>
@@ -80,14 +80,14 @@
                 </div>
 
                 <div class="col-lg-3 col-sm-6">
-                     <a href="Vehical.html">
+                     <a href="Vehical.php">
                     <div class="single_feature_part">
                         <img src="img/icon/car.svg" alt="#">
                         <h4>Vehical Information</h4>
                          </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                                          <a href="SocietyInfo.html">
+                                          <a href="SocietyInfo.php">
                     <div class="single_feature_part">
                         <img src="img/icon/address.svg" alt="#">
                         <h4>Society Information</h4>
@@ -104,7 +104,7 @@
             <div class="row justify-content-center">
       <div class="form-group">
 
-                                    <a href="login.html"><button type="submit" value="submit" class="btn_3">
+                                    <a href="login.php"><button type="submit" value="submit" class="btn_3">
                                   Logout
                                         </button></a>
 
@@ -113,4 +113,4 @@
         </div></div>
 
     <!--::footer_part start::-->
-   <?php include('footer.php')?>
+   <?php include('php/footer.php')?>

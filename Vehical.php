@@ -1,5 +1,5 @@
 <!--::header part start::-->
-<?php include 'header.php'?>
+<?php include 'php/header.php'?>
 
 <section class="breadcrumb_part">
     <div class="container">
@@ -65,4 +65,4 @@
 
 
 
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>

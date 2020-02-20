@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 
     <!-- breadcrumb part start-->
     <section class="breadcrumb_part">
@@ -23,7 +23,7 @@
 
                 <div class="col-lg-2  justify-content-center">
 <!--                        <div class="login_part_form_iner">-->
-                              <form  action="Building-join.html" method="post" novalidate="novalidate">
+                              <form  action="Building-join.php" method="post" novalidate="novalidate">
                                     <button type="submit" value="submit" class="btn_3">
                                         Join Your Building
                                     </button>
@@ -31,7 +31,7 @@
 
 <!--                                </div>-->
                     <br><br><br><br> <div class="col-lg-6"><h3>OR</h3></div> <br><br>
-                          <form  action="Building-Regi.html" method="post" novalidate="novalidate">
+                          <form  action="Building-Regi.php" method="post" novalidate="novalidate">
                                     <button type="submit" value="submit" class="btn_3">
                                         Create your Building
                                     </button>
@@ -44,4 +44,4 @@
     </section>
     <!--================login_part end =================-->
 
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>

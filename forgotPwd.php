@@ -1,4 +1,4 @@
-<?php include('header.php')?>
+<?php include('php/header.php')?>
 
     <!-- breadcrumb part start-->
     <section class="breadcrumb_part">
@@ -22,7 +22,7 @@
                 <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>Enter Your Mobile Number<br></h3>
-                            <form class="row contact_form" action="otp-verify.html" method="post" novalidate="novalidate">
+                            <form class="row contact_form" action="otp-verify.php" method="post" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="text" class="form-control" id="name" name="name" value=""
                                         placeholder="Mobile NUmber">
@@ -47,4 +47,4 @@
     <!--================login_part end =================-->
 
     <!--::footer_part start::-->
-<?php include('footer.php')?>
+<?php include('php/footer.php')?>
