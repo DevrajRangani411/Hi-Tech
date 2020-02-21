@@ -1,61 +1,129 @@
 <?php include('php/header.php')?>
-<!-- breadcrumb part start-->
-<section class="breadcrumb_part">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb_iner">
-                    <h2>login</h2>
+
+    <section class="breadcrumb_part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <?php
+                $qry = "SELECT * FROM appartment where AppartmentId='1' ";
+
+                $result = $con->query($qry);
+                if($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()){
+
+            ?>
+                      <div class="breadcrumb_iner">
+
+                        <h2><?php echo $row['Appartment_Name'] ?></h2>
+                    </div>
+                    <?php
+                    }
+                }
+                    ?>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- breadcrumb part end-->
+    </section>
 
-<!--================login_part Area =================-->
-<section class="login_part section_padding ">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 col-md-6">
-                <div class="login_part_form">
-                    <div class="login_part_form_iner">
-                        <h3>Welcome Back ! <br>
-                            Please Sign in now</h3>
-                        <form class="row contact_form" action="Building-join.php" method="post" novalidate="novalidate">
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" id="name" name="name" value="" placeholder="Username">
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="password" class="form-control" id="password" name="password" value="" placeholder="Password">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <div class="creat_account d-flex align-items-center">
-                                    <input type="checkbox" id="f-option" name="selector">
-                                    <label for="f-option">Remember me</label>
-                                </div>
-                                <button type="submit" value="submit" class="btn_3">
-                                    log in
-                                </button>
-                                <a class="lost_pass" href="forgotPwd.html">forget password?</a>
+    <!-- feature part here -->
+    <section class="feature_part section_padding">
+        <div class="container">
 
-                            </div>
-                        </form>
+            <div class="row justify-content-center">
+                 <div class="col-lg-3 col-sm-6">
+                      <a href="Announcement.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/megaphone.svg" alt="#">
+                        <h4>Annoucement</h4>
+                          </div></a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_feature_part">
+                        <img src="img/icon/bill.svg" alt="#">
+                        <h4>My Bills</h4>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <h3>
-                    New User ? Sign Up now.</h3>
-                <form action="Registraion.php" method="post" novalidate="novalidate">
-                    <button type="submit" value="submit" class="btn_3">
-                        Sign Up </button>
-                </form>
+                <div class="col-lg-3 col-sm-6">
+                    <a href="Emerg-ppl.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/call.svg" alt="#">
+                        <h4>Emergency Directory</h4>
+                        </div></a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="single_feature_part">
+                        <img src="img/icon/wallet.svg" alt="#">
+                        <h4>Society Maintenance</h4>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a href="members.php"><div class="single_feature_part">
+                        <img src="img/icon/team-building%20(1).svg" alt="#">
+                        <h4>Members</h4><br>
+                        </div></a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <a href="Gate-Pass.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/feature_icon_1.svg" alt="#">
+                        <h4>Gate Pass</h4><br>
+                        </div></a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                   <a href="parkingreserve.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/parking.svg" alt="#">
+                        <h4>Parking</h4>
+                       </div></a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                     <a href="Announcement.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/customer.svg" alt="#">
+                        <h4>Complains</h4>
+                    </div>
+                    </a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                      <a href="UserProfile.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/team-building.svg" alt="#">
+                        <h4>Profile</h4>
+                          </div></a>
+                </div>
+
+                <div class="col-lg-3 col-sm-6">
+                     <a href="Vehical.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/car.svg" alt="#">
+                        <h4>Vehical Information</h4>
+                         </div></a>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                                          <a href="SocietyInfo.php">
+                    <div class="single_feature_part">
+                        <img src="img/icon/address.svg" alt="#">
+                        <h4>Society Information</h4>
+                    </div>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-<!--================login_part end =================-->
 
-<!--::footer_part start::-->
-<?php include('php/footer.php')?>
+    </section>
+    <!-- feature part end -->
+    <div class="container">
+
+            <div class="row justify-content-center">
+      <div class="form-group">
+
+                                    <a href="login.php"><button type="submit" value="submit" class="btn_3">
+                                  Logout
+                                        </button></a>
+
+
+                                </div>
+        </div></div>
+
+    <!--::footer_part start::-->
+   <?php include('php/footer.php')?>

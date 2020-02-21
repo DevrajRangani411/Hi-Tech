@@ -1,6 +1,15 @@
 
-
-<?php require_once('php/connect_db.php')?>
+<?php
+session_start();
+if(!isset($_SESSION['sid'])){
+    header('Location: login.php');
+}
+if(isset($_POST['logout'])){
+    session_destroy();
+    header('Location:login.php');
+}
+require_once("php/connect_db.php");
+?>
 <!doctype html>
 <html lang="zxx">
 
