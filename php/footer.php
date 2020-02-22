@@ -37,13 +37,31 @@
        <div class="copyright_part">
                 <div class="container">
                     <div class="row ">
-                        <div class="col-lg-12">
+                        <div class="col-lg-8">
                             <div class="copyright_text">
                                 <P><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
 
                             </div>
+                        </div>
+
+                        <div class="col-lg-4">
+                            <?php
+
+                                if(isset($_SESSION['name'])){ ?>
+
+                            <form method="post" action="">
+                                      <div class="form-group">
+                                            <a ><button type="submit" value="submit" name="logout"class="btn_3">
+                                                                  Logout
+                                                                        </button></a>
+                                    </div>
+                                                    </form>
+
+                              <?php  }
+
+                            ?>
                         </div>
                     </div>
                 </div>

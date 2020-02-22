@@ -115,14 +115,14 @@
     <div class="container">
 
             <div class="row justify-content-center">
+                <form method="post" action="">
       <div class="form-group">
 
-                                    <a href="login.php"><button type="submit" value="submit" class="btn_3">
+                                    <a ><button type="submit" value="submit" name="logout"class="btn_3">
                                   Logout
                                         </button></a>
-
-
-                                </div>
+    </div>
+                    </form>
         </div></div>
 
     <!--::footer_part start::-->
