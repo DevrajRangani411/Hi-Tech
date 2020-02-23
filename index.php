@@ -5,7 +5,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <?php
-                $qry = "SELECT * FROM appartment where AppartmentId='1' ";
+                $qry = "SELECT * FROM appartment where AppartmentId='".$_SESSION['a_id']."'";
 
                 $result = $con->query($qry);
                 if($result->num_rows > 0){
