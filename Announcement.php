@@ -16,9 +16,10 @@
 
 <section>
     <div class="container">
-        <div class="row">
+        <div class="row">    
             <div class="col-sm-6">
                 <br>
+         
                 <h3 class="widget_title">Create Announcement</h3>
                 <hr>
                 <div class="media post_item">
