@@ -12,7 +12,7 @@
         </div>
     </div>
 </section>
-<!-- breadcrumb part end-->
+<!-- breadcrumb part end-->    
  <?php
                                         if(isset($_POST['join']))
                                     {
