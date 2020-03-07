@@ -17,7 +17,7 @@
 <br><br>
 <div class="container">
       <?php
-                $qry = "SELECT * FROM vehicle  INNER JOIN users  on vehicle.BlockNumber=users.BlockNumber where vehicle.AppartmentId='1'";
+                $qry = "SELECT * FROM vehicle  INNER JOIN users  on vehicle.BlockNumber=users.BlockNumber where vehicle.AppartmentId='".$_SESSION['a_id']."'";
 
                 $result = $con->query($qry);
                 if($result->num_rows > 0){
@@ -34,7 +34,9 @@
                     </strong>
                     <strong>
                         <p><?php echo $row['VehicleNumber'] ?></p>
+
                     </strong>
+
 
                     <b>Contact Detail: <?php echo $row['MobileNumber'] ?></b>
                 </div>
