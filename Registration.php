@@ -73,6 +73,8 @@
                                             $qry = "INSERT INTO users_reg(UserName,password,MobileNumber,EmailAddress,BloodGroup,UserImage) VALUES ('".$_POST['name']."','".$_POST['upass']."','".$_POST['mobile']."','".$_POST['email']."','".$_POST['bgroup']."','".$_FILES['P_Image']['name']."')";
                                             if($con->query($qry)){
                                                 $str = '<div class="callout callout-success"><h3>You Successfully Register</h3></div>';
+                                                session_start();
+                                            $_SESSION['name']=$_POST['name'];
                                             }else{
                                                 $str = '<div class="callout callout-danger"><p>Problem occurred while uploading image. Please try again.</p></div>';
                                             }
@@ -80,8 +82,7 @@
                                           else{
                                             $str = '<div class="callout callout-danger"><p>Problem occurred while uploading image.</p></div>';
                                         }
-                                              session_start();
-                                            $_SESSION['name']=$_POST['name'];
+
                                      require("php/close_db.php");
                                             echo $str;
                                     }?>
