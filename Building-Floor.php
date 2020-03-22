@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="breadcrumb_iner">
-                    <h2>Create New Building</h2>
+                    <h2>Building Details</h2>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
 
                         if($con->query($qry)){
                         $str = '<div class="callout callout-success"><h3>You Successfully Register Building.</h3></div>';
-                            header('Location: index.php');
+                            header('');
 
                         }else{
                             $str = '<div class="callout callout-danger"><h3><p>Problem occurred. Please try again.</p></h3></div>';
