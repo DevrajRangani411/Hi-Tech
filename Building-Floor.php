@@ -43,29 +43,11 @@
 
                         <form class="row contact_form" action="" method="post">
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" name="Build_Name" value="" placeholder="Building Name" required>
+                                <input type="text" class="form-control" name="block_num" value="" placeholder="Enter Total Number of Block" required>
                             </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control"  name="Num_floor" value="" placeholder="Number of Floors" required>
-                            </div>
-
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control"  name="Total_Block" value="" placeholder="Total Number of Blocks" required>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" name="City" value="" placeholder="City" required>
-                            </div>
-                            <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" name="Address" value="" placeholder="Address" required>
-                            </div>
-                            <div class="col-md-12 form-group">
-
-                                <button type="submit" value="submit" name="Building_Reg" class="btn_3" >
-                                    Register
-                                </button>
-
-
-                            </div>
+                                <button type="submit" value="submit" name="floor_set" class="btn_3" >
+                                    Add
+                            </button>
                         </form>
                     </div>
                 </div>

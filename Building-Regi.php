@@ -30,8 +30,27 @@
                     $qry = "INSERT INTO appartment(Appartment_Name,FLOOR,Total_Blocks,City,Address,Secretary_Name) VALUES ('".$_POST['Build_Name']."','".$_POST['Num_floor']."','".$_POST['Total_Block']."','".$_POST['City']."','".$_POST['Address']."','".$_SESSION['name']."')";
 
                         if($con->query($qry)){
-                        $str = '<div class="callout callout-success"><h3>You Successfully Register Building.</h3></div>';
-                            header('Location: index.php');
+
+                              $qry3 = "SELECT * FROM appartment WHERE Secretary_Name='".$_SESSION['name']."'";
+                                                    $result3 = $con->query($qry3);
+                                               $row3 = $result3->fetch_assoc();
+                            if($result3->num_rows >0){
+                               $qryblk="insert into block(BlockNumber,AppartmentId) Values ('".$_POST['block']."','".$row3['AppartmentId']."')";
+                                $con->query($qryblk);
+                                $qry1 = "UPDATE users set status=1,AppartmentId='".$row3['AppartmentId']."',BlockNumber='".$_POST['block']."',Secretary_Name='".$row3['Secretary_Name']."',isSecretary=1 where UserName='".$_SESSION['name']."'";
+                                    if($con->query($qry1))
+                                    {
+                                                  $_SESSION['a_id']=$row3['AppartmentId'];
+                                         $str = '<div class="callout callout-success"><h3>You Successfully Register Building.</h3></div>';
+                                         header('Location: index.php');
+                                    }
+                                else{echo "Internal error";}
+                            }
+                            else{
+                                echo "error Please Try Again";
+                            }
+
+
 
                         }else{
                             $str = '<div class="callout callout-danger"><h3><p>Problem occurred. Please try again.</p></h3></div>';
@@ -57,6 +76,9 @@
                             </div>
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" name="Address" value="" placeholder="Address" required>
+                            </div>
+                             <div class="col-md-12 form-group p_star">
+                                <input type="text" class="form-control" name="block" value="" placeholder="Enter Your Block Number" required>
                             </div>
                             <div class="col-md-12 form-group">
 
