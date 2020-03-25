@@ -25,14 +25,13 @@
 
 </head>
 
-
     <!-- breadcrumb part start-->
     <section class="breadcrumb_part">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcrumb_iner">
-                        <h2>Forgot Password</h2>
+                        <h2>OTP Verification</h2>
                     </div>
                 </div>
             </div>
@@ -47,55 +46,48 @@
                 <div class="col-lg-6 col-md-6">
                 <div class="login_part_form">
                         <div class="login_part_form_iner">
-                            <h3>Enter Your Register Email Address<br></h3>
+                            <h3>Enter Your OTP<br></h3>
                             <?php
-                            if(isset($_POST['verify']))
+                            if(isset($_POST['verifyotp']))
                             {
-                                 require("php/connect_db.php");
-                                  $qry = "SELECT * FROM users WHERE EmailAddress='".$_POST['name']."'";
+                                session_start();
+                                  require("php/connect_db.php");
+                                 $t=time();
+                                 $startTime=date("Y-m-d h:i:s",$t);
+                                  $qry = "SELECT * FROM tempotpverify WHERE EmailAddress='".$_SESSION['verifyemail']."' and timestamp >='".$startTime."'";
                                   $result = $con->query($qry);
-                                if($result->num_rows ==1)
+                                if($result->num_rows == 1)
                                 {
-                                    $var=rand(999,10000);
-                                    $t=time();
-                                    $timestamp = date("Y-m-d h:i:s",strtotime(date("Y-m-d h:i:s",$t)) +180);
-                                     $qry1 = "insert into tempotpverify(EmailAddress,otp,timestamp) values ('".$_POST['name']."','".$var."','".$timestamp."')";
-                                    $con->query($qry1);
-                                    $to       = $_POST['name'];
-                                    $subject  = 'Otp Verify';
-                                    $message  = "Hi, Your Otp for reset password is '".$var."' Valid Only for 3 minutes";
-                                    $headers  = 'From: [er.darshanghetiya]@gmail.com' . "\r\n" .
-                                                'MIME-Version: 1.0' . "\r\n" .
-                                                'Content-type: text/html; charset=utf-8';
-                                    if(mail($to, $subject, $message, $headers))
+                                     $row = $result->fetch_assoc();
+                                    if($_POST['otp'] == $row['Otp'])
                                     {
-                                         session_start();
-                                    $_SESSION['verifyemail']=$_POST['name'];
-                                    require("php/close_db.php");
-                                    header("Location:otpverify.php");
 
+                                          require("php/close_db.php");
+                                            header("Location:setForgotPassword.php");
                                     }
-                                }
-                                else
-                                {
-                                    echo "<h3>Please enter Register Email Address.</h3>";
-                                     require("php/close_db.php");
+                                   else{
+                                    echo "<h3>Invalid Otp</h3>";
+                                         require("php/close_db.php");
                                 }
 
-
+                                }
+                                else{
+                                    echo "<h3>Invalid Otp</h3>";
+                                      require("php/close_db.php");
+                                }
                             }
 
                             ?>
-                            <form class="row contact_form" action="" method="post">
+                            <form class="row contact_form" action="" method="post" >
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="text" class="form-control" id="name" name="name" value=""
-                                        placeholder="Email Address" required>
+                                    <input type="text" class="form-control" id="name" name="otp" value=""
+                                        placeholder="OTP Code" required>
                                 </div>
 
                                 <div class="col-md-12 form-group">
 
-                                    <button type="submit" value="submit" name="verify"class="btn_3">
-                                        Proceed To Verify OTP
+                                    <button type="submit" value="submit" name="verifyotp" class="btn_3">
+                                        Verify
                                     </button>
 
 
@@ -109,8 +101,6 @@
         </div>
     </section>
     <!--================login_part end =================-->
-
-    <!--::footer_part start::-->
 <footer class="footer_part">
 
 
@@ -134,4 +124,3 @@
         </div>
     </div>
 </footer>
-

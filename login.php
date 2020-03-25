@@ -127,7 +127,7 @@
                                 </button>
 
 
-                                <a class="lost_pass" href="forgotPwd.html">forget password?</a>
+                                <a class="lost_pass" href="forgotPwd.php">forget password?</a>
 
                             </div>
                         </form>
