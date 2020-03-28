@@ -18,7 +18,7 @@
                                     {
 
                                           require("php/connect_db.php");
-                                            $qry = "SELECT * FROM users WHERE UserName='".$_SESSION['name']."'";
+                                            $qry = "SELECT * FROM users WHERE EmailAddress='".$_SESSION['Email']."'";
                                                     $result = $con->query($qry);
                                                $row = $result->fetch_assoc();
                                             $qry2="SELECT * FROM appartment WHERE AppartmentId='".$_POST["name"]."'";
@@ -37,7 +37,7 @@
                                                     $result4=$con->query($qry4);
                                                     if($result4->num_rows==1)
                                                     {
-                                                            $qry1 = "UPDATE users set status=1,AppartmentId='".$row1['AppartmentId']."',BlockNumber='".$_POST['block_num']."',Secretary_Name='".$row1['Secretary_Name']."' where UserName='".$_SESSION['name']."'";
+                                                            $qry1 = "UPDATE users set status=1,AppartmentId='".$row1['AppartmentId']."',BlockNumber='".$_POST['block_num']."',Secretary_Name='".$row1['Secretary_Name']."' where EmailAddress='".$_SESSION['Email']."'";
 
                                                         if($con->query($qry1))
                                                         {

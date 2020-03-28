@@ -27,17 +27,24 @@
                                     {
                                 require("php/connect_db.php");
                                 $str='';
-                    $qry = "INSERT INTO appartment(Appartment_Name,FLOOR,Total_Blocks,City,Address,Secretary_Name) VALUES ('".$_POST['Build_Name']."','".$_POST['Num_floor']."','".$_POST['Total_Block']."','".$_POST['City']."','".$_POST['Address']."','".$_SESSION['name']."')";
+                    $qry = "INSERT INTO appartment(Appartment_Name,FLOOR,Total_Blocks,City,Address,Secretary_Name,Secretary_Email) VALUES ('".$_POST['Build_Name']."','".$_POST['Num_floor']."','".$_POST['Total_Block']."','".$_POST['City']."','".$_POST['Address']."','".$_SESSION['name']."','".$_SESSION['Email']."')";
 
                         if($con->query($qry)){
 
-                              $qry3 = "SELECT * FROM appartment WHERE Secretary_Name='".$_SESSION['name']."'";
+                              $qry3 = "SELECT * FROM appartment WHERE Secretary_Email='".$_SESSION['Email']."'";
                                                     $result3 = $con->query($qry3);
                                                $row3 = $result3->fetch_assoc();
                             if($result3->num_rows >0){
                                $qryblk="insert into block(BlockNumber,AppartmentId) Values ('".$_POST['block']."','".$row3['AppartmentId']."')";
                                 $con->query($qryblk);
-                                $qry1 = "UPDATE users set status=1,AppartmentId='".$row3['AppartmentId']."',BlockNumber='".$_POST['block']."',Secretary_Name='".$row3['Secretary_Name']."',isSecretary=1 where UserName='".$_SESSION['name']."'";
+
+                                  $qrysecphone="select * from users where EmailAddress='".$_SESSION['Email']."'";
+                                $resultp = $con->query($qrysecphone);
+                              $rowp = $resultp->fetch_assoc();
+                                 $qrysec="insert into secretary(Secretary_Name,Phone,AppartmentId) Values ('".$_SESSION['name']."','".$rowp['MobileNumber']."','".$row3['AppartmentId']."')";
+                                $con->query($qrysec);
+
+                                $qry1 = "UPDATE users set status=1,AppartmentId='".$row3['AppartmentId']."',BlockNumber='".$_POST['block']."',Secretary_Name='".$row3['Secretary_Name']."',isSecretary=1 where EmailAddress='".$_SESSION['Email']."'";
                                     if($con->query($qry1))
                                     {
                                                   $_SESSION['a_id']=$row3['AppartmentId'];

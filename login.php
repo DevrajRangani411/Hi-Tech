@@ -27,7 +27,7 @@
 <?php
   if(isset($_POST['otheruser'])){
     setcookie("username", "", time()-3600);
-    setcookie("userid", "", time()-3600);
+    setcookie("useremail", "", time()-3600);
     header("Location: login.php");
   }
 ?>
@@ -68,7 +68,7 @@
           $uname=$_POST['uname'];
           $upass=$_POST['upass'];
           require("php/connect_db.php");
-          $qry = "SELECT * FROM users WHERE UserName='".$uname."'";
+          $qry = "SELECT * FROM users WHERE EmailAddress='".$uname."'";
           $result = $con->query($qry);
           require("php/close_db.php");
           if($result->num_rows > 0){
@@ -78,12 +78,13 @@
 
                   $_SESSION['sid']=$row['UserId'];
                   $_SESSION['a_id']=$row['AppartmentId'];
-                  $_SESSION['name']=$row['UserName'];
+                  $_SESSION['name']=$row['FirstName'];
+                  $_SESSION['Email']=$row['EmailAddress'];
                   $_SESSION['image']=$row['UserImage'];
                   $_SESSION['bno']=$row['BlockNumber'];
 
                   setcookie("username", $_SESSION['name'], time()+60*60*24);
-                  setcookie("userid", $uname, time()+60*60*24);
+                  setcookie("useremail", $_SESSION['Email'], time()+60*60*24);
 
 
                   if($row['status']==0){
@@ -97,7 +98,7 @@
 
           }
           }else{
-              echo "<p>Username is incorrect.</p>";
+              echo "<p>EmailAddress is incorrect.</p>";
           }
 
       }
@@ -106,9 +107,9 @@
                         <form class="row contact_form" action="" method="post">
                             <div class="col-md-12 form-group p_star">
                             <?php
-                                if(isset($_COOKIE['userid'])){
-                                echo '<input name="uname" type="hidden" value="'.$_COOKIE['userid'].'">
-                                <p class="form-control" disabled>'.$_COOKIE['userid'].'</p>';
+                                if(isset($_COOKIE['useremail'])){
+                                echo '<input name="uname" type="hidden" value="'.$_COOKIE['useremail'].'">
+                                <p class="form-control" disabled>'.$_COOKIE['useremail'].'</p>';
                                 }else{
                                 echo '<input name="uname" type="text" class="form-control" placeholder="Email" required>';
                                 }

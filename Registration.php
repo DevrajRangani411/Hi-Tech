@@ -54,21 +54,37 @@
                                     {
                                 require("php/connect_db.php");
                                 $str='';
-                    $qry = "INSERT INTO users(UserName,password,MobileNumber,EmailAddress,BloodGroup) VALUES ('".$_POST['name']."','".$_POST['upass']."','".$_POST['mobile']."','".$_POST['email']."','".$_POST['bgroup']."')";
+                                $qry1="select * from users";
+                                $result = $con->query($qry1);
+
+                                $flagmail=0;
+                                while($row = $result->fetch_assoc()){
+                                     if(strtolower($row['EmailAddress']) ==strtolower($_POST['email'])){$flagmail=1;}
+                                }
+                                if($flagmail==1)
+                                {
+                                    echo "<h3><p>EmailAddress is already Registered.</p></h3>";
+                                }
+                                if($flagmail == 0){
+                   $qry = "INSERT INTO users(FirstName,LastName,password,MobileNumber,EmailAddress,BloodGroup) VALUES ('".$_POST['firstname']."','".$_POST['lastname']."','".$_POST['upass']."','".$_POST['mobile']."','".$_POST['email']."','".$_POST['bgroup']."')";
 
                         if($con->query($qry)){
                         $str = '<div class="callout callout-success"><h3>You Successfully Register.Please Login </h3></div>';
 
                         }else{
                             $str = '<div class="callout callout-danger"><h3><p>Problem occurred. Please try again.</p></h3></div>';
-                                            }
+                                            }}
                             include("php/close_db.php");
                             echo $str;
                           }?>
                         <form class="row contact_form" action="" method="post" enctype="multipart/form-data">
 
+
                             <div class="col-md-12 form-group p_star">
-                                <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+                                <input type="text" class="form-control" name="firstname" placeholder="FirstName" required>
+                            </div><br />
+                               <div class="col-md-12 form-group p_star">
+                                <input type="text" class="form-control" name="lastname" placeholder="LastName" required>
                             </div><br />
                             <div class="col-md-12 form-group p_star">
                                 <input type="password" class="form-control" name="upass" placeholder="Password" required>
