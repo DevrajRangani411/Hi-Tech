@@ -1,4 +1,10 @@
-<?php include('php/header.php')?>
+<?php include('php/header.php');
+if($_SESSION['status']==1)
+{
+     header('Location: login.php');
+     session_destroy();
+}
+?>
 
 <!-- breadcrumb part start-->
 <section class="breadcrumb_part">
@@ -67,7 +73,7 @@
                           }?>
 
 
-                        <form class="row contact_form" action="" method="post">
+                        <form name="register" class="row contact_form" action="" method="post" onsubmit="return validate()">
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" name="Build_Name" value="" placeholder="Building Name" required>
                             </div>
@@ -105,3 +111,39 @@
 </section>
 <!--================login_part end =================-->
 <?php include('php/footer.php')?>
+<script>
+function validate()
+{
+var Build_Name = document.register.Build_Name.value;
+var Num_floor = document.register.Num_floor.value;
+var Total_Block = document.register.Total_Block.value;
+var City = document.register.City.value;
+var Address= document.register.Address.value;
+    var block= document.register.block.value;
+if (fullname==null || fullname=="")
+{
+alert("Full Name can't be blank");
+return false;
+}
+else if (email==null || email=="")
+{
+alert("Email can't be blank");
+return false;
+}
+else if (username==null || username=="")
+{
+alert("Username can't be blank");
+return false;
+}
+else if(password.length&amp;lt;6)
+{
+alert("Password must be at least 6 characters long.");
+return false;
+}
+else if (password!=conpassword)
+{
+alert("Confirm Password should match with the Password");
+return false;
+}
+}
+</script>

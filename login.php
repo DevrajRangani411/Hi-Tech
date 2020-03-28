@@ -80,7 +80,7 @@
                   $_SESSION['a_id']=$row['AppartmentId'];
                   $_SESSION['name']=$row['FirstName'];
                   $_SESSION['Email']=$row['EmailAddress'];
-                  $_SESSION['image']=$row['UserImage'];
+                  $_SESSION['status']=$row['status'];
                   $_SESSION['bno']=$row['BlockNumber'];
 
                   setcookie("username", $_SESSION['name'], time()+60*60*24);

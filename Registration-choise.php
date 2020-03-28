@@ -1,4 +1,9 @@
-<?php include('php/header.php')?>
+<?php include('php/header.php');
+if($_SESSION['status']==1)
+{
+     header('Location: login.php');
+     session_destroy();
+}?>
 
     <!-- breadcrumb part start-->
     <section class="breadcrumb_part">
