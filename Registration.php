@@ -21,7 +21,16 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+<script>
+function validate1()
+{
 
+alert("Full Name can't be blank");
+return false;
+
+}
+
+</script>
 
 </head>
 
@@ -77,7 +86,7 @@
                             include("php/close_db.php");
                             echo $str;
                           }?>
-                        <form class="row contact_form" action="" method="post" enctype="multipart/form-data">
+   <form name= "register" class="row contact_form" action="" method="post" enctype="multipart/form-data" onsubmit="return validate1()">
 
 
                             <div class="col-md-12 form-group p_star">
@@ -90,18 +99,17 @@
                                 <input type="password" class="form-control" name="upass" placeholder="Password" required>
                             </div><br />
                             <div class="col-md-12 form-group p_star">
-
                                 <input type="tel" class="form-control" name="mobile" placeholder="Phone Number" pattern="[0-9]{10}" required>
                             </div><br />
                             <div class="col-md-12 form-group p_star">
                                 <input type="text" class="form-control" name="bgroup" placeholder="Blood Group" required>
                             </div><br />
                             <div class="col-md-12 form-group p_star">
-                                <input type="Email" class="form-control" name="email" placeholder="Email Address">
+                                <input type="Email" class="form-control" name="email" placeholder="Email Address" required>
                             </div><br />
                             <div class="col-md-12 form-group">
-                                <button type="submit" value="submit" name="create_user" class="btn_3">
-                                    Register
+                                <button type="submit" value="submit" name="create_user" class="btn_3" >
+                                   Register
                                 </button>
                             </div>
                         </form>
@@ -145,3 +153,4 @@
         </div>
     </div>
 </footer>
+
