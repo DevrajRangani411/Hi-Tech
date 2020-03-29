@@ -44,7 +44,7 @@ require_once("php/connect_db.php");
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                 <a class="navbar-brand" href="#"> <img src="img/1.PNG" alt="logo"> </a>
+                 <a class="navbar-brand" href="index.php"> <img src="img/1.PNG" alt="logo"> </a>
                     </div>
                 </div>
             </div>

@@ -18,48 +18,31 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                     <h3 class="widget_title">Members</h3>
-
-
+                        <br><br>
+                                 <?php
+                           $qry="select * from users where AppartmentId='".$_SESSION['a_id']."'";
+                                $result = $con->query($qry);
+ while($row = $result->fetch_assoc()){
+?>
                      <div class="media post_item">
 
-                             <img src="img/post/post_1.png" alt="post">
-                        <div class="media-body">
+                             <img src="img/product/user.png" alt="post" height="80px" width="80px">
+                         <div class="media-body">
                                 <div class="col-lg-12">
-                                    <h4>Akshit bhai Patel</h4>
+                                    <h4><?php echo $row['FirstName'];echo"  "; echo $row['LastName'] ?></h4>
 
-                                    <p><strong>Block N0 : </strong>702</p></div>
+                                    <p><strong>Block N0 : </strong><?php echo $row['BlockNumber'] ?></p></div>
                         </div>
                             </div>
 
                         <br>
-                      <div class="media post_item">
-                        <img src="img/post/post_2.png" alt="post">
-                        <div class="media-body">
-  <div class="col-lg-12">
-                              <h4>gtyajids hysadg</h4>
+                        <?php
+                                     }
+                        ?>
 
-      <p><strong>Block N0 : </strong>502</p></div>
-                        </div>
-                     </div><br>
-                       <div class="media post_item">
-                        <img src="img/post/post_3.png" alt="post">
-                        <div class="media-body">
-                             <div class="col-lg-12">
-                              <h4>Brijesh desai</h4>
 
-                                 <p><strong>Block N0 : </strong>502</p></div>
-                        </div>
-                     </div> <br>
-                      <div class="media post_item">
-                        <img src="img/post/post_7.png" alt="post">
-                        <div class="media-body">
-                            <div class="col-lg-12">
-                              <h4>Cetan iatdsh</h4>
 
-                           <p><strong>Block N0 : </strong>402</p>
-                            </div></div>
-                     </div>  <br>
+
 
                 </div>
                 </div>

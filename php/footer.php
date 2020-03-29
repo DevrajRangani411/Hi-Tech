@@ -36,6 +36,7 @@
 
        <div class="copyright_part">
                 <div class="container">
+
                     <div class="row ">
                         <div class="col-lg-8">
                             <div class="copyright_text">
@@ -62,10 +63,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                               <?php  }
 
                             ?>
+
                         </div>
                     </div>
+                    </div>
                 </div>
-            </div>
+
+
+
     </footer>
     <!--::footer_part end::-->
 

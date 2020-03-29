@@ -30,7 +30,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Flat No - <?php echo $row['BlockNumber'] ?></h5>
                     <strong>
-                        <p><?php echo $row['UserName'] ?></p>
+                        <p><?php echo $row['FirstName'];echo "  ";echo $row['LastName']  ?></p>
                     </strong>
                     <strong>
                         <p><?php echo $row['VehicleNumber'] ?></p>
@@ -48,7 +48,7 @@
                     }
                 }
     ?>
-
+</div>
 
 <!-- feature part end -->
 

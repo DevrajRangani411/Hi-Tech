@@ -68,7 +68,7 @@
           $uname=$_POST['uname'];
           $upass=$_POST['upass'];
           require("php/connect_db.php");
-          $qry = "SELECT * FROM users WHERE EmailAddress='".$uname."'";
+          $qry = "SELECT * FROM users WHERE EmailAddress='".$uname."' ";
           $result = $con->query($qry);
           require("php/close_db.php");
           if($result->num_rows > 0){
