@@ -33,7 +33,8 @@ if($_SESSION['status']==1)
                                     {
                                 require("php/connect_db.php");
                                 $str='';
-                    $qry = "INSERT INTO appartment(Appartment_Name,FLOOR,Total_Blocks,City,Address,Secretary_Name,Secretary_Email) VALUES ('".$_POST['Build_Name']."','".$_POST['Num_floor']."','".$_POST['Total_Block']."','".$_POST['City']."','".$_POST['Address']."','".$_SESSION['name']."','".$_SESSION['Email']."')";
+                                $app_id=rand(9999,100000);
+                    $qry = "INSERT INTO appartment(AppartmentId,Appartment_Name,FLOOR,Total_Blocks,City,Address,Secretary_Name,Secretary_Email) VALUES ('".$app_id."','".$_POST['Build_Name']."','".$_POST['Num_floor']."','".$_POST['Total_Block']."','".$_POST['City']."','".$_POST['Address']."','".$_SESSION['name']."','".$_SESSION['Email']."')";
 
                         if($con->query($qry)){
 

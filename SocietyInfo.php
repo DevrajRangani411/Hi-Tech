@@ -58,6 +58,13 @@ $row1 = $result1->fetch_assoc();
               <p><?php echo $row['Secretary_Email']?></p>
             </div>
           </div>
+              <div class="media contact-info">
+            <span class="contact-info__icon"><i class="ti-home"></i></span>
+            <div class="media-body">
+              <h3>Appartment Code</h3>
+              <p><?php echo $row['AppartmentId']?></p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

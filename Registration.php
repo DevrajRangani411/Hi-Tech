@@ -21,16 +21,7 @@
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-<script>
-function validate1()
-{
 
-alert("Full Name can't be blank");
-return false;
-
-}
-
-</script>
 
 </head>
 
@@ -86,7 +77,7 @@ return false;
                             include("php/close_db.php");
                             echo $str;
                           }?>
-   <form name= "register" class="row contact_form" action="" method="post" enctype="multipart/form-data" onsubmit="return validate1()">
+   <form name= "register" class="row contact_form" action="" method="post" enctype="multipart/form-data" >
 
 
                             <div class="col-md-12 form-group p_star">
