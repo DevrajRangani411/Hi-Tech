@@ -77,7 +77,7 @@
                        </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
-                     <a href="Announcement.php">
+                     <a href="complain.php">
                     <div class="single_feature_part">
                         <img src="img/icon/customer.svg" alt="#">
                         <h4>Complains</h4>

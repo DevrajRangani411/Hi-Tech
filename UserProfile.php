@@ -1,5 +1,13 @@
 <?php include('php/header.php')?>
+<?php
+if(isset($_POST['updateuser'])){
 
+    $qry3="update users set  FirstName='".$_POST['fname']."' ,LastName='".$_POST['lname']."' ,MobileNumber='".$_POST['mno']."',EmailAddress='".$_POST['email']."' where EmailAddress='".$_SESSION['Email']."'";
+   if($con->query($qry3)){
+       $_SESSION['Email']=$_POST['email'];
+
+   }}
+?>
 <!-- breadcrumb part start-->
  <section class="breadcrumb_part">
         <div class="container">
@@ -27,6 +35,8 @@
                 if($result->num_rows > 0){
                     $row = $result->fetch_assoc();
                 }
+
+
             ?>
             <div class="col-lg-8">
                 <div class="single_product_text text-center">
@@ -74,33 +84,43 @@
 <div class="modal fade" id="modal-new-event">
   <div class="modal-dialog">
 	<div class="modal-content">
-	  <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		  <span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title">Fill Product details</h4>
-	  </div>
-	  <form action="" method="post" enctype="multipart/form-data">
-	  <div class="modal-body">
-            <div class="input-group">
-                <span class="input-group-addon">Image</span>
-                <input type="file" class="form-control" placeholder="Event Image" name="new_image">
-            </div><br/>
-            <div class="input-group">
-                <span class="input-group-addon">Heading</span>
-                <input type="text" class="form-control" placeholder="Event Title" name="new_heading">
-            </div><br/>
+            <div class="modal-header">
 
-            <div class="input-group">
-                <span class="input-group-addon">Descrption</span>
-                        <textarea id="fullDesc" placeholder="Full Description" name="new_desc"></textarea>
+                <h4 class="modal-title">Update User Detail</h4>
             </div>
-	  </div>
-	  <div class="modal-footer">
-		<button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
-		<button type="submit" class="btn btn-primary" name="createproduct">Add New Product</button>
-	  </div>
-	  </form>
-	</div>
+            <form action="" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group p_star">
+                        <span class="input-group-addon">
+                            <h4>First Name </h4>
+                        </span>
+                        <input type="text" class="form-control"  name="fname" value="<?php echo $row['FirstName']?>" required>
+                    </div><br>
+                    <div class="form-group p_star">
+                        <span class="input-group-addon">
+                            <h4>Last Name </h4>
+                        </span>
+                        <input type="text" class="form-control" name="lname" value="<?php echo $row['LastName'] ?>" required>
+                    </div><br>
+                    <div class="form-group p_star">
+                        <span class="input-group-addon">
+                            <h4>Mobile Number</h4>
+                        </span>
+                        <input type="text" class="form-control"  name="mno" pattern="[0-9]{10}" value="<?php echo $row['MobileNumber'] ?>" required>
+                    </div><br>
+                    <div class="form-group p_star">
+                        <span class="input-group-addon">
+                            <h4>Email Address</h4>
+                        </span>
+                        <input type="email" class="form-control"  name="email" value="<?php echo $row['EmailAddress'] ?>" required>
+                    </div><br>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" name="updateuser">Update</button>
+                </div>
+            </form>
+        </div>
   </div>
 </div>
 

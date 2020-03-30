@@ -20,7 +20,10 @@ body {
   margin: 0;
   font-size: 14px;
 }
+textarea .foo{
+    resize: none;
 
+}
 /* line 10, /Applications/MAMP/htdocs/old/palash/cl/shop_html/sass/_common.scss */
 .message_submit_form:focus {
   outline: none;

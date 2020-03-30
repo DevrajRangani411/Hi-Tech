@@ -17,8 +17,8 @@ require_once("php/connect_db.php");
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>pillloMart</title>
-    <link rel="icon" href="img/favicon.png">
+    <title>Hi-Tech</title>
+    <link rel="icon" href="img/1.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- animate CSS -->
@@ -36,6 +36,7 @@ require_once("php/connect_db.php");
     <link rel="stylesheet" href="css/slick.css">
     <!-- style CSS -->
     <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
