@@ -44,6 +44,7 @@
                                                             echo '<h3>Appartment Code is Right</h3>';
                                                              session_start();
                                                             $_SESSION['a_id']=$row1['AppartmentId'];
+                                                            $_SESSIONs['bno']=$row1['BlockNumber'];
                                                              header("Location: index.php");
                                                         }else{
                                                            echo "Server Error Please try Again later ..";

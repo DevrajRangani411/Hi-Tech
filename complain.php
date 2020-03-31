@@ -24,7 +24,7 @@ $result1=$con->query($qry1);
     if(isset($_POST['announcement'])){
          $t=time();
                                     $timestamp = date("Y-m-d h:i:s",strtotime(date("Y-m-d h:i:s",$t)));
-        $qry5="insert into complain (Appartment_Id,Description,time) values ('".$_SESSION['a_id']."','".$_POST['textdesc']."','".$timestamp."')";
+        $qry5="insert into complain (Appartment_Id,complain_name,Description,time) values ('".$_SESSION['a_id']."','".$row1['FirstName']."','".$_POST['textdesc']."','".$timestamp."')";
         $con->query($qry5);
     }
 
@@ -88,7 +88,8 @@ $result1=$con->query($qry1);
                     <div class="media-body">
                         <div class="col-lg-12">
                             <div class="form-group">
-                                <label>Complain Date : <?php echo $timestamp;?></label>
+                                <label>Complain Date : <?php echo $timestamp;?></label><br>
+                                                                <label>Complainer Name : <?php echo $row['complain_name'];?></label>
                                 <textarea class="form-control foo"  id="comment" disabled><?php echo $row['Description'];?></textarea>
                             </div>
                             <?php

@@ -19,7 +19,7 @@ if(isset($_POST['AddBill_Block'])){
          $t=time();
     $second=$_POST['days']*86400;
      $timestamp = date("Y-m-d h:i:s",strtotime(date("Y-m-d h:i:s",$t)) +$second);
-    $qry3="insert into billpayment (AppartmentId,description,BlockNumber,Amount,time_due) values ('".$_SESSION['a_id']."','".$_POST['textbill']."','".$_SESSION['bno']."','".$_POST['amount']."','".$timestamp."')";
+    $qry3="insert into billpayment (AppartmentId,description,BlockNumber,Amount,time_due) values ('".$_SESSION['a_id']."','".$_POST['textbill']."','".$_POST['block']."','".$_POST['amount']."','".$timestamp."')";
    if($con->query($qry3)){
 
 
@@ -229,6 +229,12 @@ if($row1['isSecretary'] == 1){ ?>
                             <h3>Bill Amount</h3>
                         </span>
                         <input type="text" class="form-control" placeholder="Amount" name="amount" required>
+                    </div><br>
+                      <div class="form-group p_star">
+                        <span class="input-group-addon">
+                            <h3>Block No</h3>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Amount" name="block" required>
                     </div><br>
                     <div class="form-group p_star">
                         <span class="input-group-addon">

@@ -48,7 +48,7 @@ if ($result12->num_rows > 0) {
         $id++;
     }
 }
-$id   = $id - 2;
+$id   = $id - 1;
 $temp = 0;
 while ($temp <= $id) {
     $qry = "SELECT * FROM  users where users.AppartmentId='" . $_SESSION['a_id'] . "' and users.BlockNumber=$block[$temp]";

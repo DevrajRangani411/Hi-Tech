@@ -82,10 +82,11 @@ if(isset($_POST['add']))
                         </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
+                    <a href="buildingMaintenance.php">
                     <div class="single_feature_part">
                         <img src="img/icon/wallet.svg" alt="#">
                         <h4>Society Maintenance</h4>
-                    </div>
+                        </div></a>
                 </div>
                 <div class="col-lg-3 col-sm-6">
                     <a href="members.php"><div class="single_feature_part">
